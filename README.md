@@ -12,16 +12,16 @@ npm install --save-dev run-postcss-after-compilation-webpack-plugin
 ```
 
 # Usage
-You must write the PostCSS config to ```./postcss.config.js``` .
+You must pass the absolute path to the ```postcss.config.js``` file to the plugin's constructor.
 
 ```js
 // webpack.config.js
 
-const PostCSSAfterCompilationPlugin = require('run-postcss-after-compilation-webpack-plugin');
+const RunPostCSSAfterCompilationPlugin = require('run-postcss-after-compilation-webpack-plugin');
 
 module.exports = {
 	plugins: {
-		new PostCSSAfterCompilationPlugin()
+		new RunPostCSSAfterCompilationPlugin(path.resolve(__dirname, "postcss.config.js"))
 	}
 }
 ```

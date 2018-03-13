@@ -2,16 +2,25 @@ const path = require("path");
 const SourceMapSource = require("webpack-sources").SourceMapSource;
 const postcss = require("postcss");
 const postcssLoadConfig = require("postcss-load-config");
-const postcssConfig = require("./postcss.config");
 
 
-class PostCSSAfterCompilationPlugin
+class RunPostCSSAfterCompilationPlugin
 {
+	constructor(configPath)
+	{
+		if(!configPath)
+		{
+			throw new Error("You must pass the absolute path to postcss.config.js file.");
+		}
+
+		this.postcssConfig = require(configPath);
+	}
+
 	// eslint-disable-next-line class-methods-use-this
 	apply(compiler)
 	{
-		compiler.hooks.emit.tapAsync("PostCSSAfterCompilationPlugin", (compilation, callback) => {
-			postcssLoadConfig(postcssConfig)
+		compiler.hooks.emit.tapAsync("RunPostCSSAfterCompilationPlugin", (compilation, callback) => {
+			postcssLoadConfig(this.postcssConfig)
 				.then(({ plugins, options }) =>
 				{
 					const promises = Object.keys(compilation.assets)
@@ -36,4 +45,4 @@ class PostCSSAfterCompilationPlugin
 }
 
 
-module.exports = PostCSSAfterCompilationPlugin;
+module.exports = RunPostCSSAfterCompilationPlugin;
