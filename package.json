@@ -1,0 +1,30 @@
+{
+  "name": "run-postcss-after-compilation-webpack-plugin",
+  "version": "1.0.0",
+  "description": "Plugin used to run PostCSS on Webpack CSS output. Useful for applying the PostCSS processing on the bundled CSS instead of per-file.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergiucaraian/run-postcss-after-compilation-webpack-plugin.git"
+  },
+  "author": "Sergiu Caraian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sergiucaraian/run-postcss-after-compilation-webpack-plugin/issues"
+  },
+  "keywords": [
+    "webpack",
+    "postcss",
+    "emit",
+    "compilation",
+    "css",
+    "asset",
+    "bundle"
+  ],
+  "homepage": "https://github.com/sergiucaraian/run-postcss-after-compilation-webpack-plugin#readme",
+  "dependencies": {
+    "postcss": "^6.0.19",
+    "postcss-load-config": "^1.2.0",
+    "webpack-sources": "^1.1.0"
+  }
+}
