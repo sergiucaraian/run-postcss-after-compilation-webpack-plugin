@@ -1,5 +1,6 @@
 # run-postcss-after-compilation-webpack-plugin
-[![npm][npm]][npm-url]
+[![npm version](https://badge.fury.io/js/run-postcss-after-compilation-webpack-plugin.svg)](https://badge.fury.io/js/run-postcss-after-compilation-webpack-plugin)
+
 Plugin used to run PostCSS on Webpack CSS output. Useful for applying the PostCSS processing on the bundled CSS instead of per-file.
 
 Works with Webpack (>= 4.0).
